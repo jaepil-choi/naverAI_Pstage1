@@ -70,8 +70,8 @@ class MaskDataset(Dataset):
         
         sample = {
             'image': img_np, 
-            'gender': , 
-            'age': encoded_age, 
+            'gender': encoded_gender, 
+            'age': label_age, 
             'mask': encoded_mask, 
             'label': encoded_cat,
             }
