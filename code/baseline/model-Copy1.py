@@ -1,10 +1,7 @@
-#%%
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-import torchvision
-#%%
 
 class BaseModel(nn.Module):
     def __init__(self, num_classes):
@@ -36,29 +33,21 @@ class BaseModel(nn.Module):
         x = x.view(-1, 128)
         return self.fc(x)
 
-#%%
-vgg = torchvision.models.vgg19_bn(pretrained=True)
-vgg
 
-#%%
 # Custom Model Template
 class MyModel(nn.Module):
-    def __init__(self, num_classes,):
+    def __init__(self, num_classes):
         super().__init__()
 
-        self.num_classes = num_classes
-        self.net = torchvision.models.vgg19_bn(pretrained=True)
-        self.net.classifier = nn.Sequential(
-            nn.Linear(512 * 7 * 7, 4096, bias=True),
-            nn.ReLU(inplace=True),
-            nn.Dropout(),
-            nn.Linear(4096, 4096),
-            nn.Dropout(),
-            nn.Linear(4096, num_classes),
-        )
+        """
+        1. 위와 같이 생성자의 parameter 에 num_claases 를 포함해주세요.
+        2. 나만의 모델 아키텍쳐를 디자인 해봅니다.
+        3. 모델의 output_dimension 은 num_classes 로 설정해주세요.
+        """
 
     def forward(self, x):
-        x = self.net(x)
-        
+        """
+        1. 위에서 정의한 모델 아키텍쳐를 forward propagation 을 진행해주세요
+        2. 결과로 나온 output 을 return 해주세요
+        """
         return x
-#%%
