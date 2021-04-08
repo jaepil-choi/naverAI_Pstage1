@@ -203,3 +203,9 @@ tags
 
 # Data Files
 input/data/
+*.tar
+
+# model files
+*.ckpt
+*.pth
+
