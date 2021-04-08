@@ -34,15 +34,8 @@ def seed_everything(seed: int):
     np.random.seed(seed)
     random.seed(seed)
 
-def numbers_to_onehot(targets: list, n_classes: int):
-    targets = np.array(targets).reshape(-1)
-    one_hot_targets_2d = np.eye(n_classes)[targets]
+# def numbers_to_onehot(targets: list, n_classes: int): # criterion 자체가 알아서 onehot해줌. 
+#     targets = np.array(targets).reshape(-1)
+#     one_hot_targets_2d = np.eye(n_classes)[targets]
 
-    return one_hot_targets_2d
-
-#%%
-a = np.eye(6)
-a
-
-
-#%%
+#     return one_hot_targets_2d
